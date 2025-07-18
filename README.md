@@ -78,7 +78,7 @@ The application includes:
 - Monitoring and logging
 - Comprehensive documentation
 
-### [License](./APACHE.md)
+### [License](./LICENSE.md)
 
 ```
 Copyright 2025 MikeTeddyOmondi
