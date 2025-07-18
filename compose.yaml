@@ -1,0 +1,16 @@
+name: todoapp
+
+services:
+  todo-app:
+    build: .
+    image: ranckosolutionsinc/spring-todo-app:latest
+    container_name: spring-todo-app
+    ports:
+      - "8484:8484"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped

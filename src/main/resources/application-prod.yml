@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:https://libsql-server.com/database-name
+    driver-class-name: org.sqlite.JDBC
+    username: ${DATABASE_USERNAME:}
+    password: ${DATABASE_PASSWORD:}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+  application:
+    name: todo-app
+
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /
+  compression:
+    enabled: true
+
+logging:
+  level:
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+    com.example.todoapp: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/todo-app.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized

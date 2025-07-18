@@ -1,0 +1,44 @@
+### Create Todos
+POST http://localhost:8484/api/todos
+Content-Type: application/json
+
+{
+    "title": "Deploy Application",
+    "description": "Deploy the application to production",
+    "status": "PENDING",
+    "dueDate": "2025-01-15T10:00:00"
+}
+
+### Get All Todos
+GET http://localhost:8484/api/todos
+
+
+### Get Todo by ID
+GET http://localhost:8484/api/todos/1
+
+
+### Update Todo
+PUT http://localhost:8484/api/todos/1
+Content-Type: application/json
+
+{
+    "title": "Learn Spring Boot - It's Verbosely Awesome",
+    "description": "Complete Spring Boot tutorial and build a todo app with advanced features",
+    "status": "IN_PROGRESS"
+}
+
+### Delete Todo
+DELETE http://localhost:8484/api/todos/5
+
+### Search Todos
+GET http://localhost:8484/api/todos/search?title=spring
+
+### Get Overdue Todos
+GET http://localhost:8484/api/todos/overdue
+
+### Health Check
+GET http://localhost:8484/actuator/health
+
+### Application Metrics
+GET http://localhost:8484/actuator/metrics
+

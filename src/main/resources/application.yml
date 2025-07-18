@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:file:./todo.db
+    driver-class-name: org.sqlite.JDBC
+    username: 
+    password: 
+  # datasource:
+  #   url: jdbc:sqlite:https://localhost:8888/spring-todo-app
+  #   # Or for local sqld server:
+  #   # url: jdbc:sqlite:http://localhost:8080/your-database
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  
+  application:
+    name: todo-app
+
+server:
+  port: ${PORT:8484}
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

@@ -1,0 +1,30 @@
+# Maven / Gradle build output
+target/
+build/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+*.properties.local
+
+# Compiled class files
+*.class
+
+# Temporary files
+*.swp
+*.swo
+
+*todo.db
